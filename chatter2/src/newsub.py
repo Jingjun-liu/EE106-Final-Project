@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 #Import the dependencies as described in example_pub.py
 import rospy
 import math
@@ -11,9 +9,9 @@ def position(a):
     a1 = 10*a - int(10*a)
     if a > 0:
         if a1 > 0.5:
-            a = (int(10*x)+1)
+            a = (int(10*a)+1)
         elif a1 < 0.5:
-            a = (int(10*x))
+            a = (int(10*a))
     else:
         if a1 < -0.5:
             a = int(10*a)-1
@@ -48,12 +46,16 @@ def callback(message):
        y = (int(10*y))  '''  
     #print x,y
     maze = [["-","-","-","-"],["-","-","-","-"],["-","-","-","-"],["-","-","-","-"]]
-    maze[y1][3-x1] = "wall"
-    maze[y2][3-x2] = "des"
-    maze[y3][3-x3] = "box1"
-    maze[y4][3-x4] = "box2"
+    maze[3-y1][3-x1] = "w"
+    maze[3-y2][3-x2] = "d"
+    maze[3-y3][3-x3] = "1"
+    maze[3-y4][3-x4] = "2"
     #rospy.sleep(3)
-    print maze
+    #m = raw_input() 
+    #if m =='m':
+    for i in range(4):
+        print maze[i]
+    print "####################"
     #print message
     # rospy.loginfo(rospy.get_caller_id() + "I heard %s", message.data)
 
@@ -71,7 +73,6 @@ def listener():
     #use to receive messages of type std_msgs/String from the topic /chatter_talk.
     #Whenever a new message is received, the method callback() will be called
     #with the received message as its first argument.
-
     rospy.Subscriber("ar_pose_marker", AlvarMarkers, callback)
 
 
@@ -82,4 +83,4 @@ def listener():
 
 #Python's syntax for a main() method
 if __name__ == '__main__':
-     listener()
+    listener()
