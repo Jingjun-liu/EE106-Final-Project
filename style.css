@@ -1,56 +1,81 @@
-*{
-    margin: 0;
-    padding: 0;
-}
-.header {
-    width: 100%;
-    height: 80px;
-    /*background-color: red;*/
-}
-.header .h1 {
-    color: #2b2b2b;
-    text-align: center;
+html {
+	text-align: center;
 }
 
-.header .projectName{
-    font-size: 20px;
-    color: #3c3f41;
-    text-align: center;
+body {
+	background-color: #FFFFFF; 
 }
 
-.content{
-    width: 800px;
-    height: 600px;
-    margin: 0 auto;
-    /*background-color: green;*/
+.jumbotron 
+{
+	background-image: url("google3.jpg");
+    -webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	color: #FFFFFF;
+	text-shadow: 0px 0px 3px #505050, -1px -1px #505050, 1px 1px #505050;
+	font-weight: bold;
 }
-.content video{
-    width: 800px;
 
+.jumbotron h1 {
+	font-size: 5em;
+	padding: 0.5em;
+	padding-bottom: 0em;
 }
-.content embed{
-    width: 1000px;
+
+.jumbotron p {
+	font-size: 24px;
 }
-.content iframe{
-    display:block;
-    margin: 0 auto;
+
+.col-md-6 {
+	overflow: hidden;
 }
-.footer{
-    width: 1000px;
-    height: 150px;
-    /*background-color:blue;*/
-    margin:0 auto;
+
+.pic {
+    padding: 0px;
+    font-size: 1.5em;
+    min-height: 300px;
+    margin-bottom: 10px;
+    -webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	position: relative;
+	transition: all .1s ease-in-out;
+	max-width: 100%;
 }
-ul{
-    list-style:none;
+
+.pic:hover {
+	opacity: 0.8;
+	filter: alpha(opacity=100); /* For IE8 and earlier */
+	transform: scale(1.1);
+	-webkit-transform: scale(1.1);
+	-moz-transform: scale(1.1);
 }
-ul li{
-    float: left;
+
+
+
+.picDescription {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	position: absolute;
+	padding-top: 2.5em;
+/*	top: 50%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	-webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%); */
+    color: #FFFFFF;
+	text-shadow: 0px 0px 3px #505050, -1px -1px #505050, 1px 1px #505050;
+	font-weight: bold;
+	font-size: 2em;
+	opacity: 0;
 }
-ul li div{
-    width: 250px;
-    margin-top: 100px;
-}
-ul li div p{
-    text-align: center;
+
+.picDescription:hover {
+	opacity: 1;
 }
